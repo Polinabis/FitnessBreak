@@ -17,7 +17,7 @@ interface ExerciseCardDao {
     @Query("SELECT * FROM cards WHERE id IN (:cardIds)")
     suspend fun getCardsByIds(cardIds: List<Int>): List<ExerciseCardEntity>
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertCard(card: ExerciseCardEntity)
 
     @Update

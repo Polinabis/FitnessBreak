@@ -1,4 +1,4 @@
-package com.example.fitnessbreak.data.model
+package com.example.fitnessbreak.domain.model
 
 sealed interface ImageSource {
     data class Resource(val resId: Int) : ImageSource

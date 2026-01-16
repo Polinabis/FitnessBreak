@@ -2,10 +2,10 @@ package com.example.fitnessbreak.ui.screens.alarm
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import com.example.fitnessbreak.data.model.ExerciseCard
+import com.example.fitnessbreak.domain.model.ExerciseCard
 import com.example.fitnessbreak.R
 import androidx.compose.runtime.State
-import com.example.fitnessbreak.data.model.ImageSource
+import com.example.fitnessbreak.domain.model.ImageSource
 
 class AlarmViewModel : ViewModel() {
     private val _uiState = mutableStateOf<AlarmScreenState>(AlarmScreenState.Initial)

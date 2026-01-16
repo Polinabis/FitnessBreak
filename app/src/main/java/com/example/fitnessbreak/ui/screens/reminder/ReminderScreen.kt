@@ -1,13 +1,13 @@
 package com.example.fitnessbreak.ui.screens.reminder
 
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.fitnessbreak.ui.components.ScreenTemplate
 
 @Composable
 fun ReminderScreen(
-    viewModel: ReminderViewModel = viewModel()
+    viewModel: ReminderViewModel = hiltViewModel()
 ) {
     ScreenTemplate(title = "Напоминания") {
 

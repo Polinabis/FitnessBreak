@@ -3,7 +3,7 @@ package com.example.fitnessbreak.data.repository
 import com.example.fitnessbreak.data.local.dao.ExerciseCardDao
 import com.example.fitnessbreak.data.local.dao.SectionDao
 import com.example.fitnessbreak.data.mapper.toModel
-import com.example.fitnessbreak.data.model.ExerciseSection
+import com.example.fitnessbreak.domain.model.ExerciseSection
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import javax.inject.Inject

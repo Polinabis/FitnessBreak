@@ -12,11 +12,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.fitnessbreak.R
-import com.example.fitnessbreak.data.model.ExerciseCard
-import com.example.fitnessbreak.data.model.ExerciseSection
-import com.example.fitnessbreak.data.model.ImageSource
 import com.example.fitnessbreak.ui.components.ScreenTemplate
 import com.example.fitnessbreak.ui.theme.Background
 import com.example.fitnessbreak.ui.theme.Peachy
@@ -31,6 +26,8 @@ fun ExerciseSettingsScreen(
 ) {
     val cards by viewModel.cards.collectAsState()
     val sections by viewModel.sections.collectAsState()
+
+    println("SECTIONS: $sections")
 
 //    val initialSelectedIds = setOf("warmup_1", "strength_1", "stretch_1")
 //    val initialHours = 1

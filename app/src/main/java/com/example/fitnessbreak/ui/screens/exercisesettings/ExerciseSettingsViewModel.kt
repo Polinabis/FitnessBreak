@@ -5,8 +5,8 @@ import androidx.lifecycle.ViewModel
 import androidx.compose.runtime.State
 import androidx.compose.runtime.derivedStateOf
 import androidx.lifecycle.viewModelScope
-import com.example.fitnessbreak.data.model.ExerciseCard
-import com.example.fitnessbreak.data.model.ExerciseSection
+import com.example.fitnessbreak.domain.model.ExerciseCard
+import com.example.fitnessbreak.domain.model.ExerciseSection
 import com.example.fitnessbreak.data.repository.ExerciseCardRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
@@ -97,7 +97,7 @@ class ExerciseSettingsViewModel @Inject constructor(
     fun updateReminderTime(hours: Int, minutes: Int) {
         // Валидация
         val validHours = hours.coerceIn(0, 23)
-        val validMinutes = minutes.coerceIn(0, 59)
+        val validMinutes = minutes.coerceIn(0, 55)
         _currentReminderHours.value = validHours
         _currentReminderMinutes.value = validMinutes
     }

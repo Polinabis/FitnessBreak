@@ -2,9 +2,9 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("kotlin-kapt")
+//    id("kotlin-kapt")
     id("com.google.devtools.ksp")
-    id("com.google.dagger.hilt.android") version "2.56.1"
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -65,18 +65,23 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.9.3")
 
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
 
-    implementation("io.coil-kt:coil-compose:3.0.0")
-    implementation("io.coil-kt:coil-compose-base:2.7.0")
+    implementation("io.coil-kt.coil3:coil-compose:3.0.0")
+//    implementation("io.coil-kt:coil-compose-base:2.7.0")
 
     implementation("androidx.room:room-runtime:2.7.1")
     ksp("androidx.room:room-compiler:2.7.1")
     implementation("androidx.room:room-ktx:2.7.1")
 
     implementation("com.google.dagger:hilt-android:2.56.1")
-    kapt("com.google.dagger:hilt-android-compiler:2.56.1")
+    ksp("com.google.dagger:hilt-android-compiler:2.56.1")
+
+    implementation("com.google.code.gson:gson:2.10.1")
 
 }

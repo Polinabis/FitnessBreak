@@ -32,11 +32,10 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import coil.compose.AsyncImage
+import coil3.compose.AsyncImage
 import com.example.fitnessbreak.R
-import com.example.fitnessbreak.data.model.ExerciseCard
-import com.example.fitnessbreak.data.model.ImageSource
+import com.example.fitnessbreak.domain.model.ExerciseCard
+import com.example.fitnessbreak.domain.model.ImageSource
 import com.example.fitnessbreak.ui.theme.Background
 import com.example.fitnessbreak.ui.theme.LightGreen
 import com.example.fitnessbreak.ui.theme.LogoGreen

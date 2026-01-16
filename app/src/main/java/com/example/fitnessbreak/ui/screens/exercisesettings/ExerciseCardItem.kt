@@ -12,12 +12,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import coil.compose.AsyncImage
+import coil3.compose.AsyncImage
 import android.net.Uri
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.ui.graphics.Color
-import com.example.fitnessbreak.data.model.ExerciseCard
-import com.example.fitnessbreak.data.model.ImageSource
+import com.example.fitnessbreak.domain.model.ExerciseCard
+import com.example.fitnessbreak.domain.model.ImageSource
 import com.example.fitnessbreak.ui.theme.LightGreen
 import com.example.fitnessbreak.ui.theme.Peachy
 import com.example.fitnessbreak.R
@@ -73,7 +73,7 @@ fun ExerciseCardItem(
             text = card.title,
             style = CardTitleStyle,
             textAlign = TextAlign.Center,
-            maxLines = 1
+            maxLines = 2
         )
 
         Spacer(modifier = Modifier.height(8.dp))

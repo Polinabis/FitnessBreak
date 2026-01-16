@@ -76,7 +76,7 @@ private fun NumberInputField(
         verticalAlignment = Alignment.CenterVertically
     ) {
         IconButton(onClick = {
-            if (value > range.first) onValueChange(value - step)
+            if (value < range.last) onValueChange(value + step)
         }) {
             Icon(
                 imageVector = Icons.Default.KeyboardArrowUp,
@@ -102,7 +102,7 @@ private fun NumberInputField(
         }
 
         IconButton(onClick = {
-            if (value < range.last) onValueChange(value + step)
+            if (value > range.first) onValueChange(value - step)
         }) {
             Icon(
                 imageVector = Icons.Default.KeyboardArrowDown,
