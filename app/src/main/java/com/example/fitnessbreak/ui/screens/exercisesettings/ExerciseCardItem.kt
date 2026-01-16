@@ -16,8 +16,8 @@ import coil3.compose.AsyncImage
 import android.net.Uri
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.ui.graphics.Color
-import com.example.fitnessbreak.domain.model.ExerciseCard
-import com.example.fitnessbreak.domain.model.ImageSource
+import com.example.fitnessbreak.data.local.model.ExerciseCard
+import com.example.fitnessbreak.data.local.model.ImageSource
 import com.example.fitnessbreak.ui.theme.LightGreen
 import com.example.fitnessbreak.ui.theme.Peachy
 import com.example.fitnessbreak.R

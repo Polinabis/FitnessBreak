@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.WindowManager.LayoutParams
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.core.app.NotificationManagerCompat
 import androidx.core.view.WindowCompat
+import com.example.fitnessbreak.domain.NotificationHelper
 import com.example.fitnessbreak.domain.ReminderScheduler
 import com.example.fitnessbreak.ui.screens.alarm.AlarmScreen
 import com.example.fitnessbreak.ui.theme.FitnessBreakTheme
@@ -15,6 +17,8 @@ import dagger.hilt.android.AndroidEntryPoint
 class   AlarmActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        NotificationManagerCompat.from(this).cancel(NotificationHelper.NOTIFICATION_ID)
 
         WindowCompat.setDecorFitsSystemWindows(window, false)
         window.addFlags(

@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.sizeIn
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.layout.width
@@ -34,8 +33,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.example.fitnessbreak.R
-import com.example.fitnessbreak.domain.model.ExerciseCard
-import com.example.fitnessbreak.domain.model.ImageSource
+import com.example.fitnessbreak.data.local.model.ExerciseCard
+import com.example.fitnessbreak.data.local.model.ImageSource
 import com.example.fitnessbreak.ui.theme.Background
 import com.example.fitnessbreak.ui.theme.LightGreen
 import com.example.fitnessbreak.ui.theme.LogoGreen
@@ -114,7 +113,7 @@ fun AlarmInProgressContent(
             ) {
                 Box(
                     modifier = Modifier
-                        .weight(1f) // ← даёт изображению всё свободное место
+                        .weight(1f)
                         .clip(RoundedCornerShape(8.dp))
                 ) {
                     val imageModel = when (val source = card.imageSource) {

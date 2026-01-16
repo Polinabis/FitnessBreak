@@ -1,4 +1,4 @@
-package com.example.fitnessbreak.domain.model
+package com.example.fitnessbreak.data.local.model
 
 data class ExerciseSection(
     val id: Int,

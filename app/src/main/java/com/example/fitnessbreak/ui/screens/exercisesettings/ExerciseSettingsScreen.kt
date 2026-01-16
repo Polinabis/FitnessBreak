@@ -27,23 +27,11 @@ fun ExerciseSettingsScreen(
     val cards by viewModel.cards.collectAsState()
     val sections by viewModel.sections.collectAsState()
 
-    println("SECTIONS: $sections")
-
-//    val initialSelectedIds = setOf("warmup_1", "strength_1", "stretch_1")
-//    val initialHours = 1
-//    val initialMinutes = 15
-//
-//    // Загружаем исходное состояние ОДИН РАЗ при старте
-//    LaunchedEffect(Unit) {
-//        viewModel.loadInitialData(initialSelectedIds, initialHours, initialMinutes)
-//    }
-
     // Текущее состояние (локальное, до сохранения)
     val currentSelection by viewModel.currentSelection
     val hasUnsavedChanges by viewModel.hasUnsavedChanges
     val reminderHours by viewModel.reminderHours
     val reminderMinutes by viewModel.reminderMinutes
-
 
     ScreenTemplate(title = "Упражнения") {
         LazyColumn(

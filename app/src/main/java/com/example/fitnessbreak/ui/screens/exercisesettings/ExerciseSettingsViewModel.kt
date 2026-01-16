@@ -5,8 +5,8 @@ import androidx.lifecycle.ViewModel
 import androidx.compose.runtime.State
 import androidx.compose.runtime.derivedStateOf
 import androidx.lifecycle.viewModelScope
-import com.example.fitnessbreak.domain.model.ExerciseCard
-import com.example.fitnessbreak.domain.model.ExerciseSection
+import com.example.fitnessbreak.data.local.model.ExerciseCard
+import com.example.fitnessbreak.data.local.model.ExerciseSection
 import com.example.fitnessbreak.data.repository.ExerciseCardRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
@@ -14,11 +14,12 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
 import com.example.fitnessbreak.data.repository.SectionRepository
+import kotlinx.coroutines.launch
 
 
 @HiltViewModel
 class ExerciseSettingsViewModel @Inject constructor(
-    cardsRepository: ExerciseCardRepository,
+    private val cardsRepository: ExerciseCardRepository,
     sectionsRepository: SectionRepository
 ) : ViewModel() {
 
@@ -104,11 +105,23 @@ class ExerciseSettingsViewModel @Inject constructor(
 
     // Сохранение в БД
     fun saveSelection() {
-        println("Сохранено: ${_currentSelection.value}, время: ${_currentReminderHours.value}ч ${_currentReminderMinutes.value}мин")
 
-        // После успешного сохранения в БД:
-        _originalSelection.value = _currentSelection.value
-        _originalReminderHours.value = _currentReminderHours.value
-        _originalReminderMinutes.value = _currentReminderMinutes.value
+        viewModelScope.launch {
+            try {
+                cardsRepository.updateCardsSelection(_currentSelection.value)
+
+                // TODO: Сохранение времени напоминания
+                // saveReminderTime(_currentReminderHours.value, _currentReminderMinutes.value)
+
+                _originalSelection.value = _currentSelection.value
+                _originalReminderHours.value = _currentReminderHours.value
+                _originalReminderMinutes.value = _currentReminderMinutes.value
+
+            } catch (e: Exception) {
+                println("Ошибка сохранения: ${e.message}")
+            }
+        }
+
+
     }
 }
