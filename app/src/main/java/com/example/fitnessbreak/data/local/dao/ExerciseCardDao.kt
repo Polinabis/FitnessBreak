@@ -5,6 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Transaction
 import androidx.room.Update
 import com.example.fitnessbreak.data.local.entity.ExerciseCardEntity
 import kotlinx.coroutines.flow.Flow
@@ -13,6 +14,9 @@ import kotlinx.coroutines.flow.Flow
 interface ExerciseCardDao {
     @Query("SELECT * FROM cards")
     fun getAllCards(): Flow<List<ExerciseCardEntity>>
+
+    @Query("SELECT * FROM cards WHERE isSelected = 1")
+    fun getTurnedOnCards(): Flow<List<ExerciseCardEntity>>
 
     @Query("SELECT * FROM cards WHERE id IN (:cardIds)")
     suspend fun getCardsByIds(cardIds: List<Int>): List<ExerciseCardEntity>
@@ -23,6 +27,14 @@ interface ExerciseCardDao {
     @Update
     suspend fun updateCard(card: ExerciseCardEntity)
 
+    @Transaction
+    suspend fun updateAllCards(cards: List<ExerciseCardEntity>) {
+        cards.forEach { card ->
+            updateCard(card)
+        }
+    }
+
     @Delete
     suspend fun deleteCard(card: ExerciseCardEntity)
+
 }

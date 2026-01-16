@@ -14,7 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.fitnessbreak.R
-import com.example.fitnessbreak.domain.model.ExerciseSection
+import com.example.fitnessbreak.data.local.model.ExerciseSection
 import com.example.fitnessbreak.ui.theme.CreateButtonStyle
 import com.example.fitnessbreak.ui.theme.ScreenTitleStyle
 

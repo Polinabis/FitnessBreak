@@ -50,7 +50,7 @@ abstract class AppDatabase : RoomDatabase() {
                                         ExerciseCardEntity(
                                             id = 1,
                                             title = "Наклоны головы вперёд-назад",
-                                            isSelected = false,
+                                            isSelected = true,
                                             imageResId = R.drawable.neck_1,
                                             imageFilePath = null
                                         )
@@ -59,7 +59,7 @@ abstract class AppDatabase : RoomDatabase() {
                                         ExerciseCardEntity(
                                             id = 2,
                                             title = "Наклоны головы вправо-влево",
-                                            isSelected = false,
+                                            isSelected = true,
                                             imageResId = R.drawable.neck_2,
                                             imageFilePath = null
                                         )

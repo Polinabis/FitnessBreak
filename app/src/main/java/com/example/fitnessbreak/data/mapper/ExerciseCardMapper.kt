@@ -1,8 +1,8 @@
 package com.example.fitnessbreak.data.mapper
 
 import com.example.fitnessbreak.data.local.entity.ExerciseCardEntity
-import com.example.fitnessbreak.domain.model.ExerciseCard
-import com.example.fitnessbreak.domain.model.ImageSource
+import com.example.fitnessbreak.data.local.model.ExerciseCard
+import com.example.fitnessbreak.data.local.model.ImageSource
 
 // Из Entity → Model
 fun ExerciseCardEntity.toModel(): ExerciseCard {

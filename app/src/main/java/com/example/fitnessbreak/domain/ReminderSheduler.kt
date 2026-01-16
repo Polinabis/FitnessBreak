@@ -29,8 +29,8 @@ class ReminderScheduler(private val context: Context) {
             }
         }
 
-        val intent = Intent(context, AlarmActivity::class.java)
-        val pendingIntent = PendingIntent.getActivity(
+        val intent = Intent(context, AlarmReceiver::class.java)
+        val pendingIntent = PendingIntent.getBroadcast(
             context, 0, intent,
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
